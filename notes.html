@@ -3,166 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyStudySpire - Notes</title>
+  <title>Class Notes - MyStudySpire</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 0;
+      background: linear-gradient(to right, #e0f7fa, #e3f2fd);
+    }
+
+    header {
+      background: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     .container {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: 95%;
-      max-width: 1100px;
-      display: flex;
-      flex-direction: column;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      padding: 15px 25px;
-      background: #f0f9ff;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .header img {
-      height: 40px;
-      margin-right: 12px;
-    }
-
-    .header h2 {
-      margin: 0;
-      font-size: 24px;
-      color: #2563eb;
-      font-weight: bold;
-    }
-
-    /* Main content */
-    .main {
-      display: flex;
-      flex: 1;
-    }
-
-    .left {
-      flex: 1;
-      background: #f9fbff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-    }
-
-    .left img {
-      max-width: 90%;
-      height: auto;
-    }
-
-    .right {
-      flex: 1;
-      padding: 50px 30px;
+    h2 {
       text-align: center;
-    }
-
-    .right h1 {
-      color: #2563eb;
+      color: #0d6efd;
       margin-bottom: 20px;
-      font-size: 26px;
     }
 
     .notes-list {
-      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
     }
 
     .note-item {
-      margin: 12px auto;
-      padding: 14px;
-      background: #2563eb;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 70%;
-      transition: transform 0.2s, background 0.3s;
-      text-decoration: none;
       display: block;
+      text-decoration: none;
+      padding: 15px;
+      background: #0d6efd;
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     .note-item:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
+      background: #084298;
+      transform: scale(1.05);
     }
 
     .not-found {
-      margin-top: 50px;
+      text-align: center;
       padding: 20px;
-      border-radius: 12px;
-      background: #f3f4f6;
-      color: #374151;
-      font-size: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #ffe5e5;
+      color: #b00020;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 <body>
+
+  <header>📘 MyStudySpire Notes</header>
+
   <div class="container">
-
-    <!-- Header -->
-    <div class="header">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Logo">
-      <h2>MyStudySpire</h2>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main">
-      <!-- Left Illustration -->
-      <div class="left">
-        <img src="https://cdn-icons-png.flaticon.com/512/201/201565.png" alt="Notes Illustration">
-      </div>
-
-      <!-- Right Content -->
-      <div class="right">
-        <h1 id="classTitle">📘 Notes</h1>
-        <div id="notesContainer" class="notes-list">
-          <!-- Notes dynamically added here -->
-        </div>
-      </div>
-    </div>
+    <h2 id="classTitle">Loading...</h2>
+    <div id="notesContainer" class="notes-list"></div>
   </div>
 
+  <footer>© 2025 MyStudySpire | All Rights Reserved</footer>
+
   <script>
-    // Dummy Notes Data
+    // ✅ Notes Data
     const notesData = {
       6: [
-        { subject: "Math", link: "https://drive.google.com/file/d/xxxx/view" },
-        { subject: "Science", link: "https://drive.google.com/file/d/yyyy/view" }
+        { subject: "Mathematics", link: "#" },
+        { subject: "Science", link: "#" },
+        { subject: "English", link: "#" },
+        { subject: "Social Science", link: "#" },
+        { subject: "Hindi", link: "#" }
       ],
       7: [
-        { subject: "English", link: "https://drive.google.com/file/d/zzzz/view" },
-        { subject: "History", link: "https://drive.google.com/file/d/aaaa/view" }
+        { subject: "Mathematics", link: "#" },
+        { subject: "Science", link: "#" },
+        { subject: "English", link: "#" },
+        { subject: "History", link: "#" },
+        { subject: "Geography", link: "#" }
       ],
-      8: [],
+      8: [
+        { subject: "Mathematics", link: "#" },
+        { subject: "Science", link: "#" },
+        { subject: "English", link: "#" },
+        { subject: "Sanskrit", link: "#" },
+        { subject: "Computer", link: "#" }
+      ],
       9: [
-        { subject: "Math", link: "https://drive.google.com/file/d/bbbb/view" }
+        { subject: "Mathematics", link: "#" },
+        { subject: "Physics", link: "#" },
+        { subject: "Chemistry", link: "#" },
+        { subject: "Biology", link: "#" },
+        { subject: "English", link: "#" }
       ],
       10: [
-        { subject: "Physics", link: "https://drive.google.com/file/d/cccc/view" },
-        { subject: "Chemistry", link: "https://drive.google.com/file/d/dddd/view" }
+        { subject: "Physics", link: "#" },
+        { subject: "Chemistry", link: "#" },
+        { subject: "Biology", link: "#" },
+        { subject: "Mathematics", link: "#" },
+        { subject: "English", link: "#" },
+        { subject: "Computer Science", link: "#" }
       ]
     };
 
-    // Get class from URL
+    // ✅ Get class from URL
     const urlParams = new URLSearchParams(window.location.search);
     const className = urlParams.get("class");
     const container = document.getElementById("notesContainer");
@@ -170,22 +137,19 @@
 
     if (className && notesData[className]) {
       title.innerText = `📘 Class ${className} Notes`;
-      if (notesData[className].length > 0) {
-        notesData[className].forEach(note => {
-          const a = document.createElement("a");
-          a.href = note.link;
-          a.target = "_blank";
-          a.className = "note-item";
-          a.innerText = note.subject;
-          container.appendChild(a);
-        });
-      } else {
-        container.innerHTML = `<div class="not-found">No notes available for this class.</div>`;
-      }
+      notesData[className].forEach(note => {
+        const a = document.createElement("a");
+        a.href = note.link;
+        a.target = "_blank";
+        a.className = "note-item";
+        a.innerText = note.subject;
+        container.appendChild(a);
+      });
     } else {
       title.innerText = "Class Not Found";
-      container.innerHTML = `<div class="not-found">No notes available for this class.</div>`;
+      container.innerHTML = `<div class="not-found">🚫 No notes available for this class.</div>`;
     }
   </script>
+
 </body>
 </html>
