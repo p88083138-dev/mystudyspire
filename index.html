@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f0f4ff, #dfe9ff);
+      background: #eef2f7;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,18 +16,18 @@
     }
 
     .container {
-      display: flex;
       background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      display: flex;
+      width: 80%;
       max-width: 1000px;
-      width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       overflow: hidden;
     }
 
     .illustration {
       flex: 1;
-      background: #eef5ff;
+      background: #f5f9ff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +35,7 @@
     }
 
     .illustration img {
-      width: 100%;
+      width: 80%;
       max-width: 400px;
     }
 
@@ -47,37 +47,39 @@
 
     .content h1 {
       color: #0066ff;
-      font-size: 28px;
       margin-bottom: 10px;
     }
 
     .content p {
-      color: #555;
+      color: #444;
       margin-bottom: 25px;
     }
 
     .btn {
       display: block;
-      width: 200px;
+      width: 60%;
       margin: 10px auto;
       padding: 12px;
       background: #0066ff;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
+      color: white;
+      border: none;
       border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
       transition: 0.3s;
+      text-decoration: none;
     }
 
     .btn:hover {
-      background: #0047b3;
+      background: #004ecc;
     }
 
-    /* Subscribe button */
     .subscribe-btn {
-      margin-top: 20px;
       background: #28a745;
+      margin-top: 20px;
     }
+
     .subscribe-btn:hover {
       background: #1e7e34;
     }
@@ -85,31 +87,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- Left Side Illustration -->
+    <!-- Left side illustration -->
     <div class="illustration">
-      <img src="https://undraw.co/illustrations/download?illustration=reading_side" alt="Student studying">
-    </div>
+      <img src
 
-    <!-- Right Side Content -->
-    <div class="content">
-      <h1>📘 Welcome to MyStudySpire</h1>
-      <p>Select your class to access study notes</p>
-
-      <a href="notes.html?class=6" class="btn">Class 6</a>
-      <a href="notes.html?class=7" class="btn">Class 7</a>
-      <a href="notes.html?class=8" class="btn">Class 8</a>
-      <a href="notes.html?class=9" class="btn">Class 9</a>
-      <a href="notes.html?class=10" class="btn">Class 10</a>
-
-      <!-- Subscribe Button -->
-      <button class="btn subscribe-btn" onclick="subscribeUser()">🔔 Subscribe for Notifications</button>
-    </div>
-  </div>
-
-  <script>
-    function subscribeUser() {
-      alert("✅ You have subscribed for notifications! (Firebase setup required to make it real)");
-    }
-  </script>
-</body>
-</html>
