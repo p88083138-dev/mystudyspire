@@ -30,9 +30,8 @@
     .header {
       display: flex;
       align-items: center;
-      padding: 15px 25px;
-      background: #f0f9ff;
-      border-bottom: 1px solid #ddd;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
     }
 
     .header img {
@@ -127,6 +126,7 @@
 
     <!-- Main content -->
     <div class="main">
+
       <!-- Left illustration -->
       <div class="left">
         <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png" alt="Study illustration">
@@ -137,11 +137,17 @@
         <h1>📘 Welcome to MyStudySpire</h1>
         <p>Select your class to access study notes</p>
 
-        <button class="btn" onclick="location.href='notes.html?class=6'">Class 6</button>
-        <button class="btn" onclick="location.href='notes.html?class=7'">Class 7</button>
-        <button class="btn" onclick="location.href='notes.html?class=8'">Class 8</button>
-        <button class="btn" onclick="location.href='notes.html?class=9'">Class 9</button>
-        <button class="btn" onclick="location.href='notes.html?class=10'">Class 10</button>
+        <!-- Direct links to different pages -->
+        <button class="btn" onclick="location.href='class6.html'">Class 6</button>
+        <button class="btn" onclick="location.href='class7.html'">Class 7</button>
+        <button class="btn" onclick="location.href='class8.html'">Class 8</button>
+        <button class="btn" onclick="location.href='class9.html'">Class 9</button>
+        <button class="btn" onclick="location.href='class10.html'">Class 10</button>
+
+        <!-- Other site sections -->
+        <button class="btn" onclick="location.href='notes.html'">📑 Notes</button>
+        <button class="btn" onclick="location.href='subjects.html'">📚 Subjects</button>
+        <button class="btn" onclick="location.href='classes.html'">🏫 All Classes</button>
 
         <button class="btn subscribe-btn">🔔 Subscribe for Notifications</button>
       </div>
