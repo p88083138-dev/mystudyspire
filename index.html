@@ -3,56 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Notes - MyStudySpire</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Select Class | MyStudySpire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+    .btn {
+      display: block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>📘 MyStudySpire</h1>
-    <p>Download your subject notes (Google Drive Links)</p>
-  </header>
 
-  <main class="notes-container">
+  <h1>📚 Select Your Class</h1>
+  
+  <a href="notes.html?class=6" class="btn">Class 6</a>
+  <a href="notes.html?class=7" class="btn">Class 7</a>
+  <a href="notes.html?class=8" class="btn">Class 8</a>
+  <a href="notes.html?class=9" class="btn">Class 9</a>
+  <a href="notes.html?class=10" class="btn">Class 10</a>
 
-    <!-- Mathematics -->
-    <div class="card">
-      <h3>Mathematics</h3>
-      <a href="https://drive.google.com/uc?export=download&id=1jveTh6rHMy8Pz4PxuS5roZVUOSUMt1bX" target="_blank" class="btn">
-        Download Math Notes
-      </a>
-    </div>
-
-    <!-- Science -->
-    <div class="card">
-      <h3>Science</h3>
-      <a href="#" target="_blank" class="btn">
-        Download Science Notes
-      </a>
-    </div>
-
-    <!-- English -->
-    <div class="card">
-      <h3>English</h3>
-      <a href="#" target="_blank" class="btn">
-        Download English Notes
-      </a>
-    </div>
-
-    <!-- Physics -->
-    <div class="card">
-      <h3>Physics</h3>
-      <a href="#" target="_blank" class="btn">
-        Download Physics Notes
-      </a>
-    </div>
-
-  </main>
-
-  <footer>
-    <p>© 2025 MyStudySpire | All Rights Reserved</p>
-  </footer>
 </body>
 </html>
-
-
-
