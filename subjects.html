@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+    }
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .subject {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .subject:hover {
+      background: #e3f2fd;
+      transform: scale(1.05);
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>📚 Select Your Subject</header>
+
+  <div class="subjects">
+    <div class="subject">
+      📐 Math
+      <a href="notes.html#math">View Notes</a>
+    </div>
+    <div class="subject">
+      🔬 Science
+      <a href="notes.html#science">View Notes</a>
+    </div>
+    <div class="subject">
+      📖 English
+      <a href="notes.html#english">View Notes</a>
+    </div>
+    <div class="subject">
+      📜 History
+      <a href="notes.html#history">View Notes</a>
+    </div>
+  </div>
+</body>
+</html>
