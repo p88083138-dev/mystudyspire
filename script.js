@@ -1,8 +1,6 @@
 function downloadNotes(subject) {
-    alert(subject + " notes downloading...");
-
-    if (subject === "Maths") {
-        // Apke GitHub repo me jo "notes.pdf" file hai uska path
-        window.open("notes.pdf", "_blank");
-    }
+  if (subject === "Maths") {
+    // Direct link to math.pdf in GitHub Pages
+    window.open("math.pdf", "_blank");
+  }
 }
