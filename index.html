@@ -3,155 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyStudySpire</title>
+  <title>MyStudySpire Notes</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e6f7ff, #ccf2ff);
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: 95%;
-      max-width: 1100px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Header bar */
-    .header {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .header img {
-      height: 40px;
-      margin-right: 12px;
-    }
-
-    .header h2 {
-      margin: 0;
-      font-size: 24px;
-      color: #2563eb;
-      font-weight: bold;
-    }
-
-    /* Main content split */
-    .main {
-      display: flex;
-      flex: 1;
-    }
-
-    .left {
-      flex: 1;
-      background: #f9fbff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-    }
-
-    .left img {
-      max-width: 90%;
-      height: auto;
-    }
-
-    .right {
-      flex: 1;
-      padding: 50px 30px;
+      padding: 0;
       text-align: center;
     }
-
-    .right h1 {
-      color: #2563eb;
-      margin-bottom: 10px;
-      font-size: 26px;
-    }
-
-    .right p {
-      color: #555;
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
-
-    .btn {
-      display: block;
-      width: 70%;
-      margin: 12px auto;
-      padding: 14px;
-      background: #2563eb;
+    header {
+      background: #007bff;
+      padding: 15px;
       color: white;
-      font-size: 17px;
+      font-size: 24px;
       font-weight: bold;
-      border: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
       border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
-    .btn:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
+    h2 {
+      color: #007bff;
+      margin-bottom: 20px;
     }
-
-    .subscribe-btn {
-      margin-top: 20px;
-      background: #16a34a;
+    .subjects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .subjects a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #007bff;
       color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s;
     }
-
-    .subscribe-btn:hover {
-      background: #15803d;
+    .subjects a:hover {
+      background: #0056b3;
+    }
+    footer {
+      margin: 20px 0;
+      color: #555;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
+
+  <header>📘 MyStudySpire Notes</header>
+
+  <!-- Class 6 -->
   <div class="container">
-
-    <!-- Header -->
-    <div class="header">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Logo">
-      <h2>MyStudySpire</h2>
-    </div>
-
-    <!-- Main content -->
-    <div class="main">
-
-      <!-- Left illustration -->
-      <div class="left">
-        <img src="https://cdn-icons-png.flaticon.com/512/2942/2942921.png" alt="Study illustration">
-      </div>
-
-      <!-- Right content -->
-      <div class="right">
-        <h1>📘 Welcome to MyStudySpire</h1>
-        <p>Select your class to access study notes</p>
-
-        <!-- Direct links to different pages -->
-        <button class="btn" onclick="location.href='class6.html'">Class 6</button>
-        <button class="btn" onclick="location.href='class7.html'">Class 7</button>
-        <button class="btn" onclick="location.href='class8.html'">Class 8</button>
-        <button class="btn" onclick="location.href='class9.html'">Class 9</button>
-        <button class="btn" onclick="location.href='class10.html'">Class 10</button>
-
-        <!-- Other site sections -->
-        <button class="btn" onclick="location.href='notes.html'">📑 Notes</button>
-        <button class="btn" onclick="location.href='subjects.html'">📚 Subjects</button>
-        <button class="btn" onclick="location.href='classes.html'">🏫 All Classes</button>
-
-        <button class="btn subscribe-btn">🔔 Subscribe for Notifications</button>
-      </div>
+    <h2>📘 Class 6 Notes</h2>
+    <div class="subjects">
+      <a href="#">Mathematics</a>
+      <a href="#">Science</a>
+      <a href="#">English</a>
+      <a href="#">Social Science</a>
+      <a href="#">Hindi</a>
     </div>
   </div>
+
+  <!-- Class 7 -->
+  <div class="container">
+    <h2>📘 Class 7 Notes</h2>
+    <div class="subjects">
+      <a href="#">Mathematics</a>
+      <a href="#">Science</a>
+      <a href="#">English</a>
+      <a href="#">History</a>
+      <a href="#">Geography</a>
+    </div>
+  </div>
+
+  <!-- Class 8 -->
+  <div class="container">
+    <h2>📘 Class 8 Notes</h2>
+    <div class="subjects">
+      <a href="#">Mathematics</a>
+      <a href="#">Science</a>
+      <a href="#">English</a>
+      <a href="#">Sanskrit</a>
+      <a href="#">Computer</a>
+    </div>
+  </div>
+
+  <!-- Class 9 -->
+  <div class="container">
+    <h2>📘 Class 9 Notes</h2>
+    <div class="subjects">
+      <a href="#">Mathematics</a>
+      <a href="#">Physics</a>
+      <a href="#">Chemistry</a>
+      <a href="#">Biology</a>
+      <a href="#">English</a>
+    </div>
+  </div>
+
+  <!-- Class 10 -->
+  <div class="container">
+    <h2>📘 Class 10 Notes</h2>
+    <div class="subjects">
+      <a href="#">Mathematics</a>
+      <a href="#">Physics</a>
+      <a href="#">Chemistry</a>
+      <a href="#">Biology</a>
+      <a href="#">English</a>
+      <a href="#">Computer Science</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 MyStudySpire | All Rights Reserved
+  </footer>
+
 </body>
 </html>
