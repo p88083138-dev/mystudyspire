@@ -1,12 +1,17 @@
+// Button click example
+document.getElementById("clickMeBtn").addEventListener("click", function() {
+    alert("Hello from MyStudySpire!");
+});
+
+// Notes download function
 function downloadNotes(subject) {
     alert(subject + " notes downloading...");
 
-    // Yaha apna PDF file link dalna hoga
-    if(subject === "Maths") {
+    if (subject === "Maths") {
         window.open("https://example.com/maths.pdf", "_blank");
-    } else if(subject === "Science") {
+    } else if (subject === "Science") {
         window.open("https://example.com/science.pdf", "_blank");
-    } else if(subject === "English") {
+    } else if (subject === "English") {
         window.open("https://example.com/english.pdf", "_blank");
     }
 }
