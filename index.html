@@ -3,106 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyStudySpire | Select Class</title>
+  <title>MyStudySpire</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+      background: linear-gradient(135deg, #f0f4ff, #dfe9ff);
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* Header */
-    header {
-      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 10px;
-      padding: 15px 25px;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header img {
-      height: 40px;
-    }
-    header h2 {
-      margin: 0;
-      font-size: 22px;
-      color: #007bff;
+      height: 100vh;
     }
 
-    /* Main container */
     .container {
+      display: flex;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      max-width: 1000px;
+      width: 90%;
+      overflow: hidden;
+    }
+
+    .illustration {
       flex: 1;
+      background: #eef5ff;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
     }
-    .card {
-      background: #fff;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 400px;
+
+    .illustration img {
       width: 100%;
+      max-width: 400px;
     }
 
-    .card h1 {
+    .content {
+      flex: 1;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .content h1 {
+      color: #0066ff;
+      font-size: 28px;
       margin-bottom: 10px;
-      color: #007bff;
-      font-size: 26px;
-    }
-    .card p {
-      margin-bottom: 25px;
-      color: #555;
     }
 
-    /* Buttons */
+    .content p {
+      color: #555;
+      margin-bottom: 25px;
+    }
+
     .btn {
       display: block;
+      width: 200px;
       margin: 10px auto;
-      padding: 14px 22px;
-      font-size: 18px;
-      background: #007bff;
-      color: white;
+      padding: 12px;
+      background: #0066ff;
+      color: #fff;
       text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      width: 180px;
       font-weight: bold;
-    }
-    .btn:hover {
-      background: #0056b3;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      transition: 0.3s;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #fff;
-      font-size: 14px;
-      color: #777;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    .btn:hover {
+      background: #0047b3;
+    }
+
+    /* Subscribe button */
+    .subscribe-btn {
+      margin-top: 20px;
+      background: #28a745;
+    }
+    .subscribe-btn:hover {
+      background: #1e7e34;
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Logo">
-    <h2>MyStudySpire</h2>
-  </header>
-
-  <!-- Main Section -->
   <div class="container">
-    <div class="card">
-      <h1>📚 Welcome to MyStudySpire</h1>
+    <!-- Left Side Illustration -->
+    <div class="illustration">
+      <img src="https://undraw.co/illustrations/download?illustration=reading_side" alt="Student studying">
+    </div>
+
+    <!-- Right Side Content -->
+    <div class="content">
+      <h1>📘 Welcome to MyStudySpire</h1>
       <p>Select your class to access study notes</p>
 
       <a href="notes.html?class=6" class="btn">Class 6</a>
@@ -110,13 +100,16 @@
       <a href="notes.html?class=8" class="btn">Class 8</a>
       <a href="notes.html?class=9" class="btn">Class 9</a>
       <a href="notes.html?class=10" class="btn">Class 10</a>
+
+      <!-- Subscribe Button -->
+      <button class="btn subscribe-btn" onclick="subscribeUser()">🔔 Subscribe for Notifications</button>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    Made with ❤️ by <b>MyStudySpire</b>
-  </footer>
-
+  <script>
+    function subscribeUser() {
+      alert("✅ You have subscribed for notifications! (Firebase setup required to make it real)");
+    }
+  </script>
 </body>
 </html>
