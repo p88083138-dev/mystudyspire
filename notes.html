@@ -53,37 +53,49 @@
 <body>
 
   <header>
-    <h1>📘 Available Notes</h1>
+    <h1 id="class-title">📘 Class Notes</h1>
   </header>
 
-  <div class="container">
-    <h2>Download Notes</h2>
-
-    <div id="math" class="note math">
-      <span>📐 Math Notes</span>
-      <a href="math.pdf" download><button>Download</button></a>
-    </div>
-
-    <div id="science" class="note science">
-      <span>🔬 Science Notes</span>
-      <a href="science.pdf" download><button>Download</button></a>
-    </div>
-
-    <div id="english" class="note english">
-      <span>📖 English Notes</span>
-      <a href="english.pdf" download><button>Download</button></a>
-    </div>
-
-    <div id="history" class="note history">
-      <span>📜 History Notes</span>
-      <a href="history.pdf" download><button>Download</button></a>
-    </div>
+  <div class="container" id="notes-container">
+    <h2>Subjects</h2>
+    <!-- Subjects yaha JavaScript ke through aayenge -->
   </div>
+
+  <script>
+    // URL se class number get karna
+    const urlParams = new URLSearchParams(window.location.search);
+    const classNum = urlParams.get("class");
+
+    const classTitle = document.getElementById("class-title");
+    const container = document.getElementById("notes-container");
+
+    // Class ke hisaab se subjects
+    const subjects = {
+      6: ["Math", "Science", "English", "History"],
+      7: ["Math", "Science", "Geography", "Computer"],
+      8: ["Math", "Biology", "English", "Civics"],
+      9: ["Math", "Physics", "Chemistry", "Economics"],
+      10: ["Math", "Science", "English", "Social Science"]
+    };
+
+    if (subjects[classNum]) {
+      classTitle.textContent = `📘 Class ${classNum} Notes`;
+
+      subjects[classNum].forEach(sub => {
+        const div = document.createElement("div");
+        div.className = "note";
+        div.innerHTML = `
+          <span>📖 ${sub} Notes</span>
+          <a href="${sub.toLowerCase()}.pdf" download><button>Download</button></a>
+        `;
+        container.appendChild(div);
+      });
+    } else {
+      classTitle.textContent = "Class Not Found";
+      container.innerHTML = "<p>No notes available for this class.</p>";
+    }
+  </script>
 
 </body>
 </html>
 
-  </div>
-
-</body>
-</html>
