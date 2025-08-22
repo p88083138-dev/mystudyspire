@@ -68,3 +68,4 @@ p {
   </script>
 </body>
 </html>
+Added JavaScript Basics section
