@@ -30,3 +30,17 @@ function greet() {
   alert("Welcome to MyStudySpire!");
 }
 Added CSS Basics section
+## 2. CSS Basics
+
+- CSS stands for **Cascading Style Sheets**
+- It is used to style and design web pages
+- Example:
+
+```css
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+p {
+  color: green;
+}
