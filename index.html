@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Select Class | MyStudySpire</title>
+  <title>MyStudySpire | Select Class</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,14 +14,32 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      text-align: center;
+    }
+    header {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header img {
+      height: 50px;
     }
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       color: #007bff;
+      font-size: 28px;
+    }
+    p {
+      margin-bottom: 30px;
+      color: #555;
+      font-size: 18px;
     }
     .btn {
       display: block;
-      margin: 10px;
+      margin: 10px auto;
       padding: 15px 25px;
       font-size: 18px;
       background: #007bff;
@@ -29,6 +47,7 @@
       text-decoration: none;
       border-radius: 8px;
       transition: background 0.3s;
+      width: 150px;
     }
     .btn:hover {
       background: #0056b3;
@@ -37,8 +56,17 @@
 </head>
 <body>
 
-  <h1>📚 Select Your Class</h1>
+  <!-- Logo Section -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Logo">
+    <h2>MyStudySpire</h2>
+  </header>
+
+  <!-- Welcome Section -->
+  <h1>📚 Welcome to MyStudySpire</h1>
+  <p>Select your class to access study notes</p>
   
+  <!-- Buttons -->
   <a href="notes.html?class=6" class="btn">Class 6</a>
   <a href="notes.html?class=7" class="btn">Class 7</a>
   <a href="notes.html?class=8" class="btn">Class 8</a>
