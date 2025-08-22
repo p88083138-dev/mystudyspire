@@ -29,3 +29,4 @@ p {
 function greet() {
   alert("Welcome to MyStudySpire!");
 }
+Added CSS Basics section
