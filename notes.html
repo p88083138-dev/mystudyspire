@@ -3,101 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Available Notes</title>
+  <title>MyStudySpire - Notes</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
       margin: 0;
-      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    header {
-      background: #007bff;
-      color: white;
-      padding: 15px;
+
+    .container {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 95%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      background: #f0f9ff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header img {
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    /* Main content */
+    .main {
+      display: flex;
+      flex: 1;
+    }
+
+    .left {
+      flex: 1;
+      background: #f9fbff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .left img {
+      max-width: 90%;
+      height: auto;
+    }
+
+    .right {
+      flex: 1;
+      padding: 50px 30px;
       text-align: center;
     }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+    .right h1 {
+      color: #2563eb;
+      margin-bottom: 20px;
+      font-size: 26px;
     }
-    h2 {
-      color: #007bff;
+
+    .notes-list {
+      margin-top: 20px;
     }
-    .note {
-      margin: 15px 0;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .note button {
-      background: #28a745;
+
+    .note-item {
+      margin: 12px auto;
+      padding: 14px;
+      background: #2563eb;
       color: white;
+      font-size: 16px;
+      font-weight: bold;
       border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
+      width: 70%;
+      transition: transform 0.2s, background 0.3s;
+      text-decoration: none;
+      display: block;
     }
-    .note button:hover {
-      background: #218838;
+
+    .note-item:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .not-found {
+      margin-top: 50px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <header>
-    <h1 id="class-title">📘 Class Notes</h1>
-  </header>
+    <!-- Header -->
+    <div class="header">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Logo">
+      <h2>MyStudySpire</h2>
+    </div>
 
-  <div class="container" id="notes-container">
-    <h2>Subjects</h2>
-    <!-- Subjects yaha JavaScript ke through aayenge -->
+    <!-- Main Content -->
+    <div class="main">
+      <!-- Left Illustration -->
+      <div class="left">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201565.png" alt="Notes Illustration">
+      </div>
+
+      <!-- Right Content -->
+      <div class="right">
+        <h1 id="classTitle">📘 Notes</h1>
+        <div id="notesContainer" class="notes-list">
+          <!-- Notes dynamically added here -->
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    // URL se class number get karna
-    const urlParams = new URLSearchParams(window.location.search);
-    const classNum = urlParams.get("class");
-
-    const classTitle = document.getElementById("class-title");
-    const container = document.getElementById("notes-container");
-
-    // Class ke hisaab se subjects
-    const subjects = {
-      6: ["Math", "Science", "English", "History"],
-      7: ["Math", "Science", "Geography", "Computer"],
-      8: ["Math", "Biology", "English", "Civics"],
-      9: ["Math", "Physics", "Chemistry", "Economics", "English"],
-      10: ["Math", "Science", "English", "SocialScience", "Computer"]
+    // Dummy Notes Data
+    const notesData = {
+      6: [
+        { subject: "Math", link: "https://drive.google.com/file/d/xxxx/view" },
+        { subject: "Science", link: "https://drive.google.com/file/d/yyyy/view" }
+      ],
+      7: [
+        { subject: "English", link: "https://drive.google.com/file/d/zzzz/view" },
+        { subject: "History", link: "https://drive.google.com/file/d/aaaa/view" }
+      ],
+      8: [],
+      9: [
+        { subject: "Math", link: "https://drive.google.com/file/d/bbbb/view" }
+      ],
+      10: [
+        { subject: "Physics", link: "https://drive.google.com/file/d/cccc/view" },
+        { subject: "Chemistry", link: "https://drive.google.com/file/d/dddd/view" }
+      ]
     };
 
-    if (subjects[classNum]) {
-      classTitle.textContent = `📘 Class ${classNum} Notes`;
+    // Get class from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const className = urlParams.get("class");
+    const container = document.getElementById("notesContainer");
+    const title = document.getElementById("classTitle");
 
-      subjects[classNum].forEach(sub => {
-        const div = document.createElement("div");
-        div.className = "note";
-        div.innerHTML = `
-          <span>📖 ${sub} Notes</span>
-          <a href="${sub.toLowerCase()}${classNum}.pdf" download>
-            <button>Download</button>
-          </a>
-        `;
-        container.appendChild(div);
-      });
+    if (className && notesData[className]) {
+      title.innerText = `📘 Class ${className} Notes`;
+      if (notesData[className].length > 0) {
+        notesData[className].forEach(note => {
+          const a = document.createElement("a");
+          a.href = note.link;
+          a.target = "_blank";
+          a.className = "note-item";
+          a.innerText = note.subject;
+          container.appendChild(a);
+        });
+      } else {
+        container.innerHTML = `<div class="not-found">No notes available for this class.</div>`;
+      }
     } else {
-      classTitle.textContent = "Class Not Found";
-      container.innerHTML = "<p>No notes available for this class.</p>";
+      title.innerText = "Class Not Found";
+      container.innerHTML = `<div class="not-found">No notes available for this class.</div>`;
     }
   </script>
-
 </body>
 </html>
-
