@@ -6,72 +6,117 @@
   <title>MyStudySpire | Select Class</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+      min-height: 100vh;
     }
+
+    /* Header */
     header {
-      position: absolute;
-      top: 15px;
-      left: 20px;
       display: flex;
       align-items: center;
       gap: 10px;
+      padding: 15px 25px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header img {
-      height: 50px;
+      height: 40px;
     }
-    h1 {
+    header h2 {
+      margin: 0;
+      font-size: 22px;
+      color: #007bff;
+    }
+
+    /* Main container */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .card h1 {
       margin-bottom: 10px;
       color: #007bff;
-      font-size: 28px;
+      font-size: 26px;
     }
-    p {
-      margin-bottom: 30px;
+    .card p {
+      margin-bottom: 25px;
       color: #555;
-      font-size: 18px;
     }
+
+    /* Buttons */
     .btn {
       display: block;
       margin: 10px auto;
-      padding: 15px 25px;
+      padding: 14px 22px;
       font-size: 18px;
       background: #007bff;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s;
-      width: 150px;
+      transition: all 0.3s ease;
+      width: 180px;
+      font-weight: bold;
     }
     .btn:hover {
       background: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #fff;
+      font-size: 14px;
+      color: #777;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo Section -->
+  <!-- Header -->
   <header>
     <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Logo">
     <h2>MyStudySpire</h2>
   </header>
 
-  <!-- Welcome Section -->
-  <h1>📚 Welcome to MyStudySpire</h1>
-  <p>Select your class to access study notes</p>
-  
-  <!-- Buttons -->
-  <a href="notes.html?class=6" class="btn">Class 6</a>
-  <a href="notes.html?class=7" class="btn">Class 7</a>
-  <a href="notes.html?class=8" class="btn">Class 8</a>
-  <a href="notes.html?class=9" class="btn">Class 9</a>
-  <a href="notes.html?class=10" class="btn">Class 10</a>
+  <!-- Main Section -->
+  <div class="container">
+    <div class="card">
+      <h1>📚 Welcome to MyStudySpire</h1>
+      <p>Select your class to access study notes</p>
+
+      <a href="notes.html?class=6" class="btn">Class 6</a>
+      <a href="notes.html?class=7" class="btn">Class 7</a>
+      <a href="notes.html?class=8" class="btn">Class 8</a>
+      <a href="notes.html?class=9" class="btn">Class 9</a>
+      <a href="notes.html?class=10" class="btn">Class 10</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Made with ❤️ by <b>MyStudySpire</b>
+  </footer>
 
 </body>
 </html>
