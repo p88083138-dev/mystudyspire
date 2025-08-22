@@ -10,6 +10,4 @@ function downloadNotes(subject) {
         window.open("https://example.com/english.pdf", "_blank");
     }
 }
-document.getElementById("clickMeBtn").addEventListener("click", function() {
-  alert("Hello from MyStudySpire!");
-});
+
