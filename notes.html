@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Notes</title>
+  <title>Available Notes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -44,7 +44,6 @@
       padding: 8px 15px;
       border-radius: 5px;
       cursor: pointer;
-      transition: 0.3s;
     }
     .note button:hover {
       background: #218838;
@@ -54,46 +53,36 @@
 <body>
 
   <header>
-    <h1>📘 Study Notes</h1>
+    <h1>📘 Available Notes</h1>
   </header>
 
   <div class="container">
-    <h2>Available Notes</h2>
+    <h2>Download Notes</h2>
 
-    <div class="note math">
+    <div id="math" class="note math">
       <span>📐 Math Notes</span>
       <a href="math.pdf" download><button>Download</button></a>
     </div>
 
-    <div class="note science">
+    <div id="science" class="note science">
       <span>🔬 Science Notes</span>
       <a href="science.pdf" download><button>Download</button></a>
     </div>
 
-    <div class="note english">
+    <div id="english" class="note english">
       <span>📖 English Notes</span>
       <a href="english.pdf" download><button>Download</button></a>
     </div>
 
-    <div class="note geography">
-      <span>🌍 Geography Notes</span>
-      <a href="geography.pdf" download><button>Download</button></a>
-    </div>
-
-    <div class="note history">
+    <div id="history" class="note history">
       <span>📜 History Notes</span>
       <a href="history.pdf" download><button>Download</button></a>
     </div>
+  </div>
 
-    <div class="note hindi">
-      <span>📝 Hindi Notes</span>
-      <a href="hindi.pdf" download><button>Download</button></a>
-    </div>
+</body>
+</html>
 
-    <div class="note computer">
-      <span>💻 Computer Science Notes</span>
-      <a href="computer.pdf" download><button>Download</button></a>
-    </div>
   </div>
 
 </body>
