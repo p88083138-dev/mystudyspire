@@ -44,3 +44,27 @@ h1 {
 p {
   color: green;
 }
+## 3. JavaScript Basics
+
+- JavaScript is a programming language used to make web pages interactive.
+- It can be used to add dynamic content, validate forms, and create animations.
+
+- Example:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Example</title>
+</head>
+<body>
+  <h1 id="heading">Hello, World!</h1>
+  <button onclick="changeText()">Click Me</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("heading").innerHTML = "Welcome to MyStudySpire!";
+    }
+  </script>
+</body>
+</html>
