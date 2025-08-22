@@ -74,8 +74,8 @@
       6: ["Math", "Science", "English", "History"],
       7: ["Math", "Science", "Geography", "Computer"],
       8: ["Math", "Biology", "English", "Civics"],
-      9: ["Math", "Physics", "Chemistry", "Economics"],
-      10: ["Math", "Science", "English", "Social Science"]
+      9: ["Math", "Physics", "Chemistry", "Economics", "English"],
+      10: ["Math", "Science", "English", "SocialScience", "Computer"]
     };
 
     if (subjects[classNum]) {
@@ -86,7 +86,9 @@
         div.className = "note";
         div.innerHTML = `
           <span>📖 ${sub} Notes</span>
-          <a href="${sub.toLowerCase()}.pdf" download><button>Download</button></a>
+          <a href="${sub.toLowerCase()}${classNum}.pdf" download>
+            <button>Download</button>
+          </a>
         `;
         container.appendChild(div);
       });
