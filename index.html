@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #e0f2fe, #f0f9ff);
+      background: linear-gradient(to right, #f0f9ff, #e0f2fe);
       text-align: center;
     }
     header {
@@ -28,46 +28,39 @@
       text-decoration: underline;
     }
     .hero {
-      background: url('https://cdn.pixabay.com/photo/2017/01/20/00/30/books-1997565_1280.jpg') no-repeat center;
-      background-size: cover;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px black;
-    }
-    .class-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .class-card {
-      background: white;
-      border-radius: 15px;
       padding: 40px 20px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #1E3A8A;
+    }
+    .class-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 400px;
+      margin: auto;
+      padding: 30px;
+    }
+    .class-link {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
       font-size: 22px;
       font-weight: bold;
       color: #1E3A8A;
+      text-decoration: none;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+      transition: 0.3s;
     }
-    .class-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+    .class-link:hover {
       background: #f0f9ff;
+      transform: translateY(-3px);
     }
     footer {
       background: #1E3A8A;
       color: white;
       padding: 15px;
-      margin-top: 30px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -78,18 +71,18 @@
     <a href="index.html">MYSTUDYSPIRE</a>
   </header>
 
-  <!-- Hero Section with Background Image -->
+  <!-- Hero Section -->
   <div class="hero">
-    Learn • Explore • Grow
+    Welcome to MYSTUDYSPIRE – Select Your Class
   </div>
 
-  <!-- Classes Section -->
-  <div class="class-container">
-    <div class="class-card" onclick="location.href='class6.html'">Class 6</div>
-    <div class="class-card" onclick="location.href='class7.html'">Class 7</div>
-    <div class="class-card" onclick="location.href='class8.html'">Class 8</div>
-    <div class="class-card" onclick="location.href='class9.html'">Class 9</div>
-    <div class="class-card" onclick="location.href='class10.html'">Class 10</div>
+  <!-- Classes List -->
+  <div class="class-list">
+    <a href="class6.html" class="class-link">Class 6</a>
+    <a href="class7.html" class="class-link">Class 7</a>
+    <a href="class8.html" class="class-link">Class 8</a>
+    <a href="class9.html" class="class-link">Class 9</a>
+    <a href="class10.html" class="class-link">Class 10</a>
   </div>
 
   <!-- Footer -->
