@@ -6,9 +6,18 @@
 <title>MYSTUDYSPIRE</title>
 <style>
 body { font-family: Arial; margin:0; background:#f0f4f8; }
-header { background:#2196F3; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; }
-.container { padding:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.card { background:white; width:200px; padding:20px; text-align:center; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); cursor:pointer; transition:0.2s; }
+header { background:#2196F3; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; z-index:10; position:relative; }
+#home { 
+  min-height: 100vh; 
+  background: url('https://i.ibb.co/0jKcN0F/student-background.jpg') no-repeat center center/cover; 
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  justify-content:center; 
+  padding:20px;
+}
+.container { padding:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; z-index:5; position:relative; }
+.card { background:rgba(255,255,255,0.9); width:200px; padding:20px; text-align:center; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); cursor:pointer; transition:0.2s; }
 .card:hover { transform:translateY(-5px); }
 .hidden { display:none; }
 .chapter { background:white; margin:10px 0; padding:15px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center; }
@@ -22,6 +31,7 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
 
 <header onclick="showHome()">MYSTUDYSPIRE</header>
 
+<!-- HOME -->
 <div id="home">
   <div class="graphic">
     <img src="https://i.ibb.co/3Wn3DqT/study-graphic.png" alt="Student Studying">
@@ -29,11 +39,13 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
   <div class="container" id="classes-container"></div>
 </div>
 
+<!-- SUBJECTS -->
 <div id="subjects" class="hidden">
   <span class="back-btn" onclick="showHome()">⬅ Back to Classes</span>
   <div class="container" id="subjects-container"></div>
 </div>
 
+<!-- CHAPTERS -->
 <div id="chapters" class="hidden">
   <span class="back-btn" onclick="backToSubjects()">⬅ Back to Subjects</span>
   <div class="container" id="chapters-container" style="flex-direction:column;"></div>
@@ -72,7 +84,7 @@ const chaptersData = {
     "Math": ["Number Systems", "Algebra", "Coordinate Geometry", "Geometry", "Mensuration"],
     "Science": ["Matter in Our Surroundings", "Atoms and Molecules", "Structure of the Atom", "The Fundamental Unit of Life"],
     "English": ["The Road Not Taken", "Wind", "The Bond of Love", "A Letter to God"],
-    "Social Science": ["India and the Contemporary World", "The Nationalism in India", "The Making of a Global World"]
+    "Social Science": ["India and the Contemporary World", "Nationalism in India", "The Making of a Global World"]
   },
   "Class 10": {
     "Math": ["Real Numbers", "Polynomials", "Pair of Linear Equations in Two Variables", "Triangles", "Circles"],
