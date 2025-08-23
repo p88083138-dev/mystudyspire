@@ -5,28 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MYSTUDYSPIRE</title>
 <style>
-body { margin:0; font-family: Arial; background:#f0f4f8; }
-
-header { 
-  background:#2196F3; 
-  color:white; 
-  padding:20px; 
-  text-align:center; 
-  font-size:28px; 
-  font-weight:bold; 
-  cursor:pointer; 
-}
+body { margin:0; font-family: Arial; }
+header { background:#2196F3; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; }
 
 #home {
-  min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+  min-height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
               url('https://cdn.pixabay.com/photo/2017/01/10/19/05/office-1966557_1280.jpg') no-repeat center center;
-  background-size: cover;
+  background-size:cover;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   padding:20px;
+  color:white;
 }
 
 .container { 
@@ -38,7 +30,8 @@ header {
 }
 
 .card { 
-  background: rgba(255,255,255,0.95); 
+  background: rgba(255,255,255,0.9); 
+  color:black;
   width:200px; 
   padding:20px; 
   text-align:center; 
@@ -63,8 +56,6 @@ header {
 }
 .chapter a { text-decoration:none; background:#2196F3; color:white; padding:8px 12px; border-radius:5px; }
 .back-btn { margin:20px; background:#2196F3; color:white; padding:8px 12px; border-radius:5px; cursor:pointer; display:inline-block; }
-
-.graphic img { width:250px; max-width:90%; margin-bottom:20px; }
 </style>
 </head>
 <body>
@@ -72,9 +63,6 @@ header {
 <header onclick="showHome()">MYSTUDYSPIRE</header>
 
 <div id="home">
-  <div class="graphic">
-    <img src="https://cdn.pixabay.com/photo/2016/03/26/22/13/study-1281141_1280.jpg" alt="Student Studying">
-  </div>
   <div class="container" id="classes-container"></div>
 </div>
 
