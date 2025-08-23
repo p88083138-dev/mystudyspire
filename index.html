@@ -22,7 +22,6 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
 
 <header onclick="showHome()">MYSTUDYSPIRE</header>
 
-<!-- HOME -->
 <div id="home">
   <div class="graphic">
     <img src="https://i.ibb.co/3Wn3DqT/study-graphic.png" alt="Student Studying">
@@ -30,19 +29,18 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
   <div class="container" id="classes-container"></div>
 </div>
 
-<!-- SUBJECTS -->
 <div id="subjects" class="hidden">
   <span class="back-btn" onclick="showHome()">⬅ Back to Classes</span>
   <div class="container" id="subjects-container"></div>
 </div>
 
-<!-- CHAPTERS -->
 <div id="chapters" class="hidden">
   <span class="back-btn" onclick="backToSubjects()">⬅ Back to Subjects</span>
   <div class="container" id="chapters-container" style="flex-direction:column;"></div>
 </div>
 
 <script>
+// NCERT-based subjects and chapters for each class
 const classesData = {
   "Class 6": ["Math", "Science", "English", "Social Science"],
   "Class 7": ["Math", "Science", "English", "Social Science"],
@@ -52,10 +50,36 @@ const classesData = {
 };
 
 const chaptersData = {
-  "Math": ["Chapter 1: Numbers","Chapter 2: Whole Numbers","Chapter 3: Playing with Numbers"],
-  "Science": ["Chapter 1: Food","Chapter 2: Components of Food","Chapter 3: Fibre to Fabric"],
-  "English": ["Chapter 1: Fun They Had","Chapter 2: The Sound of Music","Chapter 3: The Little Girl"],
-  "Social Science": ["Chapter 1: History","Chapter 2: Geography","Chapter 3: Civics"]
+  "Class 6": {
+    "Math": ["Knowing Our Numbers", "Whole Numbers", "Playing with Numbers", "Basic Geometrical Ideas", "Integers"],
+    "Science": ["Food: Where Does It Come From?", "Components of Food", "Fibre to Fabric", "Sorting Materials into Groups"],
+    "English": ["The Fun They Had", "The Sound of Music", "The Little Girl", "A Truly Beautiful Mind"],
+    "Social Science": ["History: What, Where, How and When?", "On the Trail of the Earliest People", "From Gathering to Growing Food"]
+  },
+  "Class 7": {
+    "Math": ["Integers", "Fractions and Decimals", "Data Handling", "Simple Equations", "Lines and Angles"],
+    "Science": ["Nutrition in Animals", "Nutrition in Plants", "Motion and Time", "Electric Current and Circuits"],
+    "English": ["The Tiny Teacher", "The Desert", "Glimpses of the Past", "Bepin Choudhury's Lapse of Memory"],
+    "Social Science": ["Tracing Changes Through a Thousand Years", "New Kings and Kingdoms", "The Delhi Sultans"]
+  },
+  "Class 8": {
+    "Math": ["Rational Numbers", "Linear Equations in One Variable", "Understanding Quadrilaterals", "Data Handling", "Squares and Square Roots"],
+    "Science": ["Crop Production and Management", "Microorganisms", "Synthetic Fibres and Plastics", "Materials: Metals and Non-Metals"],
+    "English": ["The Best Christmas Present in the World", "The Happy Prince", "The Ant and the Cricket"],
+    "Social Science": ["History: The French Revolution", "Socialism in Europe and the Russian Revolution", "Nazism and the Rise of Hitler"]
+  },
+  "Class 9": {
+    "Math": ["Number Systems", "Algebra", "Coordinate Geometry", "Geometry", "Mensuration"],
+    "Science": ["Matter in Our Surroundings", "Atoms and Molecules", "Structure of the Atom", "The Fundamental Unit of Life"],
+    "English": ["The Road Not Taken", "Wind", "The Bond of Love", "A Letter to God"],
+    "Social Science": ["India and the Contemporary World", "The Nationalism in India", "The Making of a Global World"]
+  },
+  "Class 10": {
+    "Math": ["Real Numbers", "Polynomials", "Pair of Linear Equations in Two Variables", "Triangles", "Circles"],
+    "Science": ["Chemical Reactions and Equations", "Acids, Bases and Salts", "Metals and Non-Metals", "Carbon and its Compounds"],
+    "English": ["The Lost Child", "A Letter to God", "Two Stories About Flying", "The Necklace"],
+    "Social Science": ["India and the Contemporary World II", "Contemporary India II", "Democratic Politics II"]
+  }
 };
 
 let currentClass = '';
@@ -97,7 +121,7 @@ function showSubjects(cls) {
 function showChapters(subject) {
   const container = document.getElementById('chapters-container');
   container.innerHTML = '';
-  chaptersData[subject].forEach((chapter,index) => {
+  chaptersData[currentClass][subject].forEach(chapter => {
     const div = document.createElement('div');
     div.className = 'chapter';
     div.innerHTML = `${chapter} <a href="#" onclick="alert('Replace with PDF link')">Download</a>`;
