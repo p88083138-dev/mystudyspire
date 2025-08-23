@@ -10,7 +10,8 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
 
 #home {
   min-height:100vh;
-  background: url('https://cdn.pixabay.com/photo/2017/01/10/19/05/office-1966557_1280.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url('https://cdn.pixabay.com/photo/2016/03/26/22/13/study-1281141_1280.jpg') no-repeat center center;
   background-size: cover;
   display:flex;
   flex-direction:column;
@@ -18,14 +19,7 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
   justify-content:center;
   padding:20px;
   position:relative;
-}
-
-#home::before {
-  content:"";
-  position:absolute;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.3); /* overlay for readability */
-  z-index:1;
+  color:white;
 }
 
 .container { 
@@ -34,7 +28,7 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
   justify-content:center; 
   gap:20px; 
   position:relative; 
-  z-index:2; /* above overlay */
+  z-index:2; /* cards above overlay */
 }
 
 .card { 
@@ -93,6 +87,14 @@ const classesData = {
   "Class 10": ["Math", "Science", "English", "Social Science"]
 };
 
+const chaptersData = {
+  "Class 6": {"Math":["Knowing Our Numbers","Whole Numbers"],"Science":["Food: Where Does It Come From?"],"English":["The Fun They Had"],"Social Science":["History: What, Where, How and When?"]},
+  "Class 7": {"Math":["Integers"],"Science":["Nutrition in Animals"],"English":["The Tiny Teacher"],"Social Science":["Tracing Changes Through a Thousand Years"]},
+  "Class 8": {"Math":["Rational Numbers"],"Science":["Crop Production"],"English":["The Best Christmas Present"],"Social Science":["History: The French Revolution"]},
+  "Class 9": {"Math":["Number Systems"],"Science":["Matter in Our Surroundings"],"English":["The Road Not Taken"],"Social Science":["India and the Contemporary World"]},
+  "Class 10":{"Math":["Real Numbers"],"Science":["Chemical Reactions"],"English":["The Lost Child"],"Social Science":["India and the Contemporary World II"]}
+};
+
 let currentClass = '';
 
 window.onload = function() {
@@ -127,14 +129,6 @@ function showSubjects(cls) {
   document.getElementById('subjects').classList.remove('hidden');
   document.getElementById('chapters').classList.add('hidden');
 }
-
-const chaptersData = {
-  "Class 6": {"Math":["Chapter1","Chapter2"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
-  "Class 7": {"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
-  "Class 8": {"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
-  "Class 9": {"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
-  "Class 10":{"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]}
-};
 
 function showChapters(subject) {
   const container = document.getElementById('chapters-container');
