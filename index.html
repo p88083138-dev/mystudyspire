@@ -10,15 +10,22 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
 
 #home {
   min-height:100vh;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('https://cdn.pixabay.com/photo/2017/01/10/19/05/office-1966557_1280.jpg') no-repeat center center;
-  background-size:cover;
+  background: url('https://cdn.pixabay.com/photo/2017/01/10/19/05/office-1966557_1280.jpg') no-repeat center center;
+  background-size: cover;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   padding:20px;
-  color:white;
+  position:relative;
+}
+
+#home::before {
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.3); /* overlay for readability */
+  z-index:1;
 }
 
 .container { 
@@ -26,11 +33,12 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
   flex-wrap:wrap; 
   justify-content:center; 
   gap:20px; 
-  z-index:2; 
+  position:relative; 
+  z-index:2; /* above overlay */
 }
 
 .card { 
-  background: rgba(255,255,255,0.9); 
+  background: rgba(255,255,255,0.95); 
   color:black;
   width:200px; 
   padding:20px; 
@@ -85,39 +93,6 @@ const classesData = {
   "Class 10": ["Math", "Science", "English", "Social Science"]
 };
 
-const chaptersData = {
-  "Class 6": {
-    "Math": ["Knowing Our Numbers", "Whole Numbers", "Playing with Numbers", "Basic Geometrical Ideas", "Integers"],
-    "Science": ["Food: Where Does It Come From?", "Components of Food", "Fibre to Fabric", "Sorting Materials into Groups"],
-    "English": ["The Fun They Had", "The Sound of Music", "The Little Girl", "A Truly Beautiful Mind"],
-    "Social Science": ["History: What, Where, How and When?", "On the Trail of the Earliest People", "From Gathering to Growing Food"]
-  },
-  "Class 7": {
-    "Math": ["Integers", "Fractions and Decimals", "Data Handling", "Simple Equations", "Lines and Angles"],
-    "Science": ["Nutrition in Animals", "Nutrition in Plants", "Motion and Time", "Electric Current and Circuits"],
-    "English": ["The Tiny Teacher", "The Desert", "Glimpses of the Past", "Bepin Choudhury's Lapse of Memory"],
-    "Social Science": ["Tracing Changes Through a Thousand Years", "New Kings and Kingdoms", "The Delhi Sultans"]
-  },
-  "Class 8": {
-    "Math": ["Rational Numbers", "Linear Equations in One Variable", "Understanding Quadrilaterals", "Data Handling", "Squares and Square Roots"],
-    "Science": ["Crop Production and Management", "Microorganisms", "Synthetic Fibres and Plastics", "Materials: Metals and Non-Metals"],
-    "English": ["The Best Christmas Present in the World", "The Happy Prince", "The Ant and the Cricket"],
-    "Social Science": ["History: The French Revolution", "Socialism in Europe and the Russian Revolution", "Nazism and the Rise of Hitler"]
-  },
-  "Class 9": {
-    "Math": ["Number Systems", "Algebra", "Coordinate Geometry", "Geometry", "Mensuration"],
-    "Science": ["Matter in Our Surroundings", "Atoms and Molecules", "Structure of the Atom", "The Fundamental Unit of Life"],
-    "English": ["The Road Not Taken", "Wind", "The Bond of Love", "A Letter to God"],
-    "Social Science": ["India and the Contemporary World", "Nationalism in India", "The Making of a Global World"]
-  },
-  "Class 10": {
-    "Math": ["Real Numbers", "Polynomials", "Pair of Linear Equations in Two Variables", "Triangles", "Circles"],
-    "Science": ["Chemical Reactions and Equations", "Acids, Bases and Salts", "Metals and Non-Metals", "Carbon and its Compounds"],
-    "English": ["The Lost Child", "A Letter to God", "Two Stories About Flying", "The Necklace"],
-    "Social Science": ["India and the Contemporary World II", "Contemporary India II", "Democratic Politics II"]
-  }
-};
-
 let currentClass = '';
 
 window.onload = function() {
@@ -152,6 +127,14 @@ function showSubjects(cls) {
   document.getElementById('subjects').classList.remove('hidden');
   document.getElementById('chapters').classList.add('hidden');
 }
+
+const chaptersData = {
+  "Class 6": {"Math":["Chapter1","Chapter2"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
+  "Class 7": {"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
+  "Class 8": {"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
+  "Class 9": {"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]},
+  "Class 10":{"Math":["Chapter1"],"Science":["Chapter1"],"English":["Chapter1"],"Social Science":["Chapter1"]}
+};
 
 function showChapters(subject) {
   const container = document.getElementById('chapters-container');
