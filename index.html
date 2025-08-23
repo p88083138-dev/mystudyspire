@@ -6,14 +6,14 @@
 <title>MYSTUDYSPIRE</title>
 <style>
 body { font-family: Arial; margin:0; background:#f0f4f8; }
-header { background:#4CAF50; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; }
+header { background:#2196F3; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; }
 .container { padding:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
 .card { background:white; width:200px; padding:20px; text-align:center; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); cursor:pointer; transition:0.2s; }
 .card:hover { transform:translateY(-5px); }
 .hidden { display:none; }
 .chapter { background:white; margin:10px 0; padding:15px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center; }
-.chapter a { text-decoration:none; background:#4CAF50; color:white; padding:8px 12px; border-radius:5px; }
-.back-btn { margin:20px; background:#4CAF50; color:white; padding:8px 12px; border-radius:5px; cursor:pointer; display:inline-block; }
+.chapter a { text-decoration:none; background:#2196F3; color:white; padding:8px 12px; border-radius:5px; }
+.back-btn { margin:20px; background:#2196F3; color:white; padding:8px 12px; border-radius:5px; cursor:pointer; display:inline-block; }
 .graphic { text-align:center; margin:20px 0; }
 .graphic img { width:300px; max-width:90%; }
 </style>
@@ -43,7 +43,6 @@ header { background:#4CAF50; color:white; padding:20px; text-align:center; font-
 </div>
 
 <script>
-// DATA
 const classesData = {
   "Class 6": ["Math", "Science", "English", "Social Science"],
   "Class 7": ["Math", "Science", "English", "Social Science"],
@@ -59,17 +58,19 @@ const chaptersData = {
   "Social Science": ["Chapter 1: History","Chapter 2: Geography","Chapter 3: Civics"]
 };
 
-// Populate Classes
-const classesContainer = document.getElementById('classes-container');
-Object.keys(classesData).forEach(cls => {
-  const div = document.createElement('div');
-  div.className = 'card';
-  div.textContent = cls;
-  div.onclick = () => showSubjects(cls);
-  classesContainer.appendChild(div);
-});
-
 let currentClass = '';
+
+// Populate classes after page load
+window.onload = function() {
+  const classesContainer = document.getElementById('classes-container');
+  Object.keys(classesData).forEach(cls => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.textContent = cls;
+    div.onclick = () => showSubjects(cls);
+    classesContainer.appendChild(div);
+  });
+};
 
 function showHome() {
   document.getElementById('home').classList.remove('hidden');
