@@ -6,26 +6,27 @@
 <title>MYSTUDYSPIRE</title>
 <style>
 body { margin:0; font-family: Arial; background:#f0f4f8; }
-header { background:#2196F3; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; z-index:10; position:relative; }
+
+header { 
+  background:#2196F3; 
+  color:white; 
+  padding:20px; 
+  text-align:center; 
+  font-size:28px; 
+  font-weight:bold; 
+  cursor:pointer; 
+}
 
 #home {
   min-height: 100vh;
-  background: url('https://images.unsplash.com/photo-1596495577886-d920f1fbde8e?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('https://cdn.pixabay.com/photo/2017/01/10/19/05/office-1966557_1280.jpg') no-repeat center center;
   background-size: cover;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-#home::before {
-  content: "";
-  position: absolute;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.4); /* dark overlay for readability */
-  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
 .container { 
@@ -33,17 +34,16 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
   flex-wrap:wrap; 
   justify-content:center; 
   gap:20px; 
-  position: relative; 
-  z-index:2; /* above overlay */
+  z-index:2; 
 }
 
 .card { 
-  background: rgba(255,255,255,0.9); 
+  background: rgba(255,255,255,0.95); 
   width:200px; 
   padding:20px; 
   text-align:center; 
   border-radius:10px; 
-  box-shadow:0 4px 6px rgba(0,0,0,0.1); 
+  box-shadow:0 4px 6px rgba(0,0,0,0.2); 
   cursor:pointer; 
   transition:0.2s; 
 }
@@ -63,8 +63,8 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
 }
 .chapter a { text-decoration:none; background:#2196F3; color:white; padding:8px 12px; border-radius:5px; }
 .back-btn { margin:20px; background:#2196F3; color:white; padding:8px 12px; border-radius:5px; cursor:pointer; display:inline-block; }
-.graphic { text-align:center; margin:20px 0; z-index:2; position:relative; }
-.graphic img { width:300px; max-width:90%; }
+
+.graphic img { width:250px; max-width:90%; margin-bottom:20px; }
 </style>
 </head>
 <body>
@@ -73,7 +73,7 @@ header { background:#2196F3; color:white; padding:20px; text-align:center; font-
 
 <div id="home">
   <div class="graphic">
-    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1350&q=80" alt="Student Studying">
+    <img src="https://cdn.pixabay.com/photo/2016/03/26/22/13/study-1281141_1280.jpg" alt="Student Studying">
   </div>
   <div class="container" id="classes-container"></div>
 </div>
