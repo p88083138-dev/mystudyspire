@@ -3,92 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyStudySpire - Notes</title>
+  <title>MYSTUDYSPIRE</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #e6f7ff;
       margin: 0;
       padding: 0;
+      background: #f9fafb;
+    }
+    header {
+      background: #1E3A8A;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav {
+      background: #2563EB;
+      padding: 10px;
       text-align: center;
     }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: auto;
     }
     h2 {
-      color: #0073e6;
+      color: #1E3A8A;
     }
-    .btn {
+    .download-btn {
       display: inline-block;
-      margin: 8px;
-      padding: 12px 24px;
-      background: #0073e6;
-      color: white;
-      font-weight: bold;
       text-decoration: none;
+      color: white;
+      background: #1E3A8A;
+      padding: 10px 15px;
       border-radius: 8px;
-      transition: 0.3s;
+      margin-bottom: 15px;
+      font-weight: bold;
     }
-    .btn:hover {
-      background: #005bb5;
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
     }
     footer {
-      margin: 20px 0;
-      color: #444;
-      font-size: 14px;
+      background: #1E3A8A;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Class 7 -->
-  <div class="container">
-    <h2>📘 Class 7 Notes</h2>
-    <a href="class7-mathematics.html" class="btn">Mathematics</a>
-    <a href="class7-science.html" class="btn">Science</a>
-    <a href="class7-english.html" class="btn">English</a>
-    <a href="class7-history.html" class="btn">History</a>
-    <a href="class7-geography.html" class="btn">Geography</a>
-  </div>
+  <!-- Header -->
+  <header>
+    MYSTUDYSPIRE
+  </header>
 
-  <!-- Class 8 -->
-  <div class="container">
-    <h2>📘 Class 8 Notes</h2>
-    <a href="class8-mathematics.html" class="btn">Mathematics</a>
-    <a href="class8-science.html" class="btn">Science</a>
-    <a href="class8-english.html" class="btn">English</a>
-    <a href="class8-sanskrit.html" class="btn">Sanskrit</a>
-    <a href="class8-computer.html" class="btn">Computer</a>
-  </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="#class6">Class 6</a>
+    <a href="#class7">Class 7</a>
+    <a href="#class8">Class 8</a>
+    <a href="#class9">Class 9</a>
+    <a href="#class10">Class 10</a>
+  </nav>
 
-  <!-- Class 9 -->
-  <div class="container">
-    <h2>📘 Class 9 Notes</h2>
-    <a href="class9-mathematics.html" class="btn">Mathematics</a>
-    <a href="class9-physics.html" class="btn">Physics</a>
-    <a href="class9-chemistry.html" class="btn">Chemistry</a>
-    <a href="class9-biology.html" class="btn">Biology</a>
-    <a href="class9-english.html" class="btn">English</a>
-  </div>
+  <!-- Main Content -->
+  <section id="class7">
+    <h2>📘 Class 7 Math – Chapter 1 Notes</h2>
 
-  <!-- Class 10 -->
-  <div class="container">
-    <h2>📘 Class 10 Notes</h2>
-    <a href="class10-physics.html" class="btn">Physics</a>
-    <a href="class10-chemistry.html" class="btn">Chemistry</a>
-    <a href="class10-biology.html" class="btn">Biology</a>
-    <a href="class10-mathematics.html" class="btn">Mathematics</a>
-    <a href="class10-english.html" class="btn">English</a>
-    <a href="class10-computerscience.html" class="btn">Computer Science</a>
-  </div>
+    <!-- Download Button -->
+    <a href="https://drive.google.com/file/d/1-AwKeQ-ogStGebIdmb1U9nGpkqM2jgnq/view?usp=sharing" 
+       target="_blank" 
+       class="download-btn">
+       ⬇️ Download PDF
+    </a>
 
+    <!-- Embedded PDF Viewer -->
+    <iframe src="https://drive.google.com/file/d/1-AwKeQ-ogStGebIdmb1U9nGpkqM2jgnq/preview"
+            allow="autoplay">
+    </iframe>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    © 2025 MyStudySpire | All Rights Reserved
+    © 2025 MYSTUDYSPIRE | All Rights Reserved
   </footer>
 
 </body>
