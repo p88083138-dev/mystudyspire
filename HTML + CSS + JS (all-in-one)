@@ -8,14 +8,12 @@
   body { font-family: Arial, sans-serif; margin:0; background:#f0f4f8; }
   header { background:#4CAF50; color:white; padding:20px; text-align:center; font-size:28px; font-weight:bold; cursor:pointer; }
   .container { padding:20px; display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .card { background:white; width:200px; padding:20px; text-align:center; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.2s; cursor:pointer; }
+  .card { background:white; width:200px; padding:20px; text-align:center; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1); cursor:pointer; }
   .card:hover { transform:translateY(-5px); }
   .hidden { display:none; }
   .chapter { background:white; margin:10px 0; padding:15px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center; }
-  .chapter a { text-decoration:none; background:#4CAF50; color:white; padding:8px 12px; border-radius:5px; transition:0.2s; }
-  .chapter a:hover { background:#45a049; }
+  .chapter a { text-decoration:none; background:#4CAF50; color:white; padding:8px 12px; border-radius:5px; }
   .back-btn { margin:20px; background:#4CAF50; color:white; padding:8px 12px; border-radius:5px; cursor:pointer; display:inline-block; }
-  .back-btn:hover { background:#45a049; }
   .graphic { text-align:center; margin:20px 0; }
   .graphic img { width:300px; max-width:90%; }
 </style>
@@ -24,7 +22,6 @@
 
 <header onclick="showHome()">MYSTUDYSPIRE</header>
 
-<!-- HOME -->
 <div id="home">
   <div class="graphic">
     <img src="https://i.ibb.co/3Wn3DqT/study-graphic.png" alt="Student Studying">
@@ -36,75 +33,71 @@
   </div>
 </div>
 
-<!-- SUBJECTS -->
 <div id="subjects" class="hidden">
   <span class="back-btn" onclick="showHome()">⬅ Back to Classes</span>
   <div class="container" id="subjects-container"></div>
 </div>
 
-<!-- CHAPTERS -->
 <div id="chapters" class="hidden">
   <span class="back-btn" onclick="backToSubjects()">⬅ Back to Subjects</span>
   <div class="container" id="chapters-container" style="flex-direction:column;"></div>
 </div>
 
 <script>
-  // SUBJECTS FOR EACH CLASS
-  const subjectsData = {
-    class6: ["Math", "Science", "English", "Social Science"],
-    class7: ["Math", "Science", "English", "Social Science"],
-    class8: ["Math", "Science", "English", "Social Science"]
-  };
+const subjectsData = {
+  class6: ["Math", "Science", "English", "Social Science"],
+  class7: ["Math", "Science", "English", "Social Science"],
+  class8: ["Math", "Science", "English", "Social Science"]
+};
 
-  // CHAPTERS FOR EACH SUBJECT
-  const chaptersData = {
-    Math: ["Chapter 1: Knowing Our Numbers","Chapter 2: Whole Numbers","Chapter 3: Playing with Numbers"],
-    Science: ["Chapter 1: Food","Chapter 2: Components of Food","Chapter 3: Fibre to Fabric"],
-    English: ["Chapter 1: The Fun They Had","Chapter 2: The Sound of Music","Chapter 3: The Little Girl"],
-    "Social Science": ["Chapter 1: History","Chapter 2: Geography","Chapter 3: Civics"]
-  };
+const chaptersData = {
+  Math: ["Chapter 1: Numbers","Chapter 2: Whole Numbers","Chapter 3: Playing with Numbers"],
+  Science: ["Chapter 1: Food","Chapter 2: Components of Food","Chapter 3: Fibre to Fabric"],
+  English: ["Chapter 1: Fun They Had","Chapter 2: The Sound of Music","Chapter 3: The Little Girl"],
+  "Social Science": ["Chapter 1: History","Chapter 2: Geography","Chapter 3: Civics"]
+};
 
-  let currentClass = '';
+let currentClass = '';
 
-  function showHome() {
-    document.getElementById('home').classList.remove('hidden');
-    document.getElementById('subjects').classList.add('hidden');
-    document.getElementById('chapters').classList.add('hidden');
-  }
+function showHome() {
+  document.getElementById('home').classList.remove('hidden');
+  document.getElementById('subjects').classList.add('hidden');
+  document.getElementById('chapters').classList.add('hidden');
+}
 
-  function showSubjects(className) {
-    currentClass = className;
-    const container = document.getElementById('subjects-container');
-    container.innerHTML = '';
-    subjectsData[className].forEach(subject => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.textContent = subject;
-      card.onclick = () => showChapters(subject);
-      container.appendChild(card);
-    });
-    document.getElementById('home').classList.add('hidden');
-    document.getElementById('subjects').classList.remove('hidden');
-    document.getElementById('chapters').classList.add('hidden');
-  }
+function showSubjects(className) {
+  currentClass = className;
+  const container = document.getElementById('subjects-container');
+  container.innerHTML = '';
+  subjectsData[className].forEach(subject => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.textContent = subject;
+    card.onclick = () => showChapters(subject);
+    container.appendChild(card);
+  });
+  document.getElementById('home').classList.add('hidden');
+  document.getElementById('subjects').classList.remove('hidden');
+  document.getElementById('chapters').classList.add('hidden');
+}
 
-  function showChapters(subject) {
-    const container = document.getElementById('chapters-container');
-    container.innerHTML = '';
-    chaptersData[subject].forEach((chapter,index) => {
-      const div = document.createElement('div');
-      div.className = 'chapter';
-      div.innerHTML = `${chapter} <a href="pdfs/${subject}-chapter${index+1}.pdf" download>Download</a>`;
-      container.appendChild(div);
-    });
-    document.getElementById('subjects').classList.add('hidden');
-    document.getElementById('chapters').classList.remove('hidden');
-  }
+function showChapters(subject) {
+  const container = document.getElementById('chapters-container');
+  container.innerHTML = '';
+  chaptersData[subject].forEach((chapter,index) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    div.innerHTML = `${chapter} <a href="#" onclick="alert('Replace with PDF')">Download</a>`;
+    container.appendChild(div);
+  });
+  document.getElementById('subjects').classList.add('hidden');
+  document.getElementById('chapters').classList.remove('hidden');
+}
 
-  function backToSubjects() {
-    document.getElementById('subjects').classList.remove('hidden');
-    document.getElementById('chapters').classList.add('hidden');
-  }
+function backToSubjects() {
+  document.getElementById('subjects').classList.remove('hidden');
+  document.getElementById('chapters').classList.add('hidden');
+}
 </script>
 
 </body>
